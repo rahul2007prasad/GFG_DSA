@@ -46,6 +46,35 @@ public class LLOperations {
 		ll.reversePLL();
 		ll.display();
 		
+		System.out.println("Remove at");
+		ll.removeAt(2);
+		ll.display();
+		
+		
+		//---------------LL to Stack
+		
+		LLToStackAdapter llToStack =new  LLToStackAdapter();
+		
+		System.out.println("-------STACK------");
+		System.out.println("Stack push");
+		llToStack.push(1);
+		llToStack.push(2);
+		llToStack.push(3);
+		llToStack.push(4);
+		llToStack.push(5);
+		
+		
+		System.out.println("Stack display");
+		llToStack.displayStack();
+		System.out.println("");
+		System.out.println("Top");
+		llToStack.top();
+		
+		System.out.println("POP");
+		llToStack.pop();
+		llToStack.displayStack();
+		
+		
 		
 		
 	
