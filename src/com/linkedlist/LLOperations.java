@@ -10,6 +10,7 @@ public class LLOperations {
 		ll.addFirst(3);
 		ll.addFirst(4);
 		ll.addFirst(5);
+		ll.addFirst(6);
 		
 		System.out.println("Display LL");
 		ll.display();
@@ -95,9 +96,23 @@ public class LLOperations {
 		System.out.println("Peek");
 		llQueue.peek();
 		
+		//--keth from last
+		System.out.println();
+		ll.display();
+		System.out.println("Kth from last : " + ll.kthFromLast(1));
+	
+	
+		System.out.println();
+		ll.display();
+		
+		//--Middle of LL 
+				System.out.println();
+				ll.display();
+				
+				System.out.println("Middle of LL : " + ll.middeOfLL());
+				ll.display();
 		
 	
 	}
-	
-	
+
 }

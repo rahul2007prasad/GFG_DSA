@@ -200,11 +200,37 @@ public class CustomLinkedList {
 	}
 	
 	//--------------------------------
+	//Kth from last node without using size property iteratively
 	
-	
+	public int kthFromLast(int k) {
+		Node slow = head;
+		Node fast = head;
+		for(int i=0; i < k ; i++) {
+			fast = fast.next;
+		}
+		
+		while(fast != tail) {
+			slow = slow.next;
+			fast = fast.next;
+		}
+		return slow.data;
+		
+	}
 	
 	
 	//----------------------
-
+// -------Middle of LL without suing size propery iteratively
+	
+	public int middeOfLL() {
+		Node slow = head;
+		Node fast = head;
+		
+		while(fast.next != null && fast.next.next != null) {
+			slow = slow.next;
+			fast = fast.next.next;
+		}
+		return slow.data;
+		
+	}
 
 }
