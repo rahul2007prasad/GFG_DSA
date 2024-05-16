@@ -75,6 +75,25 @@ public class LLOperations {
 		llToStack.displayStack();
 		
 		
+		//----------------------
+		System.out.println("");
+		LLToQueueAdapter llQueue = new LLToQueueAdapter();
+		System.out.println("Add into queue");
+		llQueue.add(0);
+		llQueue.add(1);
+		llQueue.add(2);
+		llQueue.add(3);
+		llQueue.add(4);
+		llQueue.add(5);
+		
+		llQueue.displayQueue();
+		System.out.println();
+		System.out.println("remove");
+		llQueue.remove();
+		llQueue.displayQueue();
+		System.out.println("");
+		System.out.println("Peek");
+		llQueue.peek();
 		
 		
 	
