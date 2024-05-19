@@ -146,6 +146,18 @@ public class LLOperations {
 			System.out.println("Display reverse recursively");
 			ll.displayReverse();
 			
+			
+			//reverse LL using PR recursiveky
+			System.out.println("Reverse LL using pointer recursively");
+			ll.display();
+			ll.reversePR();
+			ll.display();
+			
+			//reverse LL DATA recursively
+			System.out.println("everse data recursively");
+			ll.display();
+			ll.reverseDLL();
+			ll.display();
 	
 	}
 

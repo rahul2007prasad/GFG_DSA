@@ -397,6 +397,51 @@ public class CustomLinkedList {
 		System.out.println();
 	}
 	
+	// Reverssse LL (Pointer recursive)
+	private void reversePRHelper(Node node) {
+		if(node == null) {
+			return;
+		}
+		reversePRHelper(node.next);
+		
+		if(node == tail) {
+			
+		}else {
+			node.next.next = node;
+		}
+	}
+	public void reversePR() {
+		reversePRHelper(head);
+		head.next = null;
+		Node temp = head;
+		head = tail;
+		tail = temp;
+		
+		System.out.println();
+	}
 	
+	
+	////reverse LL DATA recursively
+	private void revereseDRHelper(Node right , int floor) {
+		if(right == null) {
+			return;
+		}
+		revereseDRHelper(right.next , floor+1);
+		
+		if(floor >= size /2) {
+		int temp = right.data;
+		right.data = rleft.data;
+		rleft.data = temp;
+		
+		rleft = rleft.next;
+		}
+		//System.out.println(right.data);
+	}
+	
+	Node rleft;
+	public void reverseDR() {
+		rleft = head;
+		revereseDRHelper(head ,0);
+	}
 
 }
