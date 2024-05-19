@@ -180,7 +180,11 @@ public class LLOperations {
 			CustomLinkedList addTwoLL = ll.addTwoLL(ll, ll2);
 			 addTwoLL.display();
 			
-			
+			 //Intersaction point of LL
+			 
+			 ll.display();
+			int findIntersactionPointOfLL = ll.findIntersactionPointOfLL(ll, ll2);
+			System.out.println("Intersaction point : "+ findIntersactionPointOfLL);
 			
 	}
 
