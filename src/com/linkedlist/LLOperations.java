@@ -112,6 +112,16 @@ public class LLOperations {
 				System.out.println("Middle of LL : " + ll.middeOfLL());
 				ll.display();
 		
+				
+		// merge sorrt on LL
+			
+			
+			
+			System.out.println();
+			System.out.println("Merge sort on LL");
+			ll.display();
+			ll.mergeSort(ll.head, ll.tail);
+			ll.display();
 	
 	}
 

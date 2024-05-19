@@ -232,5 +232,61 @@ public class CustomLinkedList {
 		return slow.data;
 		
 	}
+	
+	
+	// merged two sortedLL
+	
+	public CustomLinkedList mergeTwoSortedLists(CustomLinkedList l1 , CustomLinkedList l2) {
+		Node one = l1.head;
+		Node two = l2.head;
+		
+		CustomLinkedList res = new CustomLinkedList();
+		
+		while(one !=null && two != null) {
+			if(one.data < two.data) {
+				res.addLast(one.data);
+				one = one.next;
+			}else {
+				res.addLast(two.data);
+				two = two.next; 
+			}
+		}
+		while(one != null) {
+			res.addLast(one.data);
+			one = one.next;
+		}
+		while(two != null) {
+			res.addLast(two.data);
+			two = two.next;
+		}
+		
+		return res;
+	}
+	
+	//mid of node
+	public Node midNode(Node head , Node tail) {
+		Node fast = head;
+		Node slow = head;
+		while(fast != tail && fast.next != tail) {
+			slow = slow.next;
+			fast = fast.next.next;
+		}
+		return slow;
+	}
+	
+	// merge sort linked list
+	public CustomLinkedList mergeSort(Node head , Node tail) {
+		 if(head == tail) {
+			 CustomLinkedList br = new CustomLinkedList();
+			 br.addLast(head.data);
+			 return br;
+		 }
+		Node mid = midNode(head , tail);
+		CustomLinkedList firstSortedhalf = mergeSort(head, mid);
+		CustomLinkedList secondSortedHalf = mergeSort(mid.next, tail);
+		
+		CustomLinkedList completeList = mergeTwoSortedLists(firstSortedhalf, secondSortedHalf);
+		return completeList;
+	}
 
 }
