@@ -122,7 +122,32 @@ public class LLOperations {
 			ll.display();
 			ll.mergeSort(ll.head, ll.tail);
 			ll.display();
+			
+			//remove duplicates
+			System.out.println("");
+			System.out.println("remove duplicates");
+			ll.addFirst(5);
+			ll.addLast(0);
+			ll.display();
+			ll.removeDuplicatesInSortedList();
+			ll.display();
+			
+			//odd even shift
+			System.out.println("odd even shift");
+			ll.oddEvenShift();
+			ll.display();
+			
+			//K reverse
+			System.out.println("K reverse");
+			ll.kReverse(3);
+			ll.display();
+			
+			//display reverse
+			System.out.println("Display reverse recursively");
+			ll.displayReverse();
+			
 	
 	}
 
+	
 }
