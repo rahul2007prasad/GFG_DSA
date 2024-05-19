@@ -169,6 +169,19 @@ public class LLOperations {
 			ll.fold();
 			ll.display();
 			
+			// add two LL
+			
+			CustomLinkedList ll2 = new CustomLinkedList();
+			ll2.addFirst(4);
+			ll2.addFirst(5);
+			System.out.println("Addition");
+			ll.display();
+			ll2.display();
+			CustomLinkedList addTwoLL = ll.addTwoLL(ll, ll2);
+			 addTwoLL.display();
+			
+			
+			
 	}
 
 	

@@ -499,4 +499,44 @@ public class CustomLinkedList {
 		fleft = head;
 		foldHelper(head ,0);
 	}
+	
+	//Add two LL data i.e addition without using reverse
+	public int addListHelper(Node one ,int pv1 , Node two , int pv2 , CustomLinkedList res) {
+		
+		if(one == null && two == null) {
+			return 0;
+		}
+		
+		int data=0;
+		if(pv1 > pv2) {
+			int oc = addListHelper(one.next, pv1 - 1, two, pv2, res);
+			 data = one.data  + oc;
+			
+			
+		}else if(pv1 < pv2) {
+			int oc = addListHelper(one, pv1, two.next, pv2 - 1, res);
+			data = two.data  + oc;
+		}else {
+			//old carry
+			int oc = addListHelper(one.next, pv1 - 1, two.next, pv2 - 1, res);
+			 data = one.data + two.data + oc;
+			
+		}
+		int newData = data % 10;
+		int newCarry = data / 10;
+		
+		res.addFirst(newData);
+		return newCarry;
+	}
+	public CustomLinkedList addTwoLL(CustomLinkedList one  , CustomLinkedList two) {
+		CustomLinkedList res = new CustomLinkedList();
+		
+		int oc = addListHelper(one.head, one.size, two.head, two.size, res);
+		if(oc > 0) {
+			res.addFirst(oc);
+		}
+		return res;
+	}
+	
+	
 }
