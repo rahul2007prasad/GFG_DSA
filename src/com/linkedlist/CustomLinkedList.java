@@ -443,5 +443,60 @@ public class CustomLinkedList {
 		rleft = head;
 		revereseDRHelper(head ,0);
 	}
+	
+	//is LL palindrome
+	private boolean isPalindromeHelper(Node right) {
+		
+		if(right == null) {
+			return true;
+		}
+		boolean rres = isPalindromeHelper(right.next);
+		if(rres == false) {
+			return false;
+		}else if(pleft.data != right.data) {
+			return false;
+		}else {
+			pleft = pleft.next;
+			return true;
+		}
+		
+		
+		
+	}
+	
+	Node pleft;
+	public boolean isPalindrome() {
+		pleft = head;
+		
+		return isPalindromeHelper(head);
+	}
 
+	
+	
+	// fold LL
+	private void foldHelper(Node right , int floor) {
+		if(right == null) {
+			return;
+		}
+		
+		foldHelper(right.next , floor+1);
+		if(floor > size /2) {
+		Node temp = fleft.next;
+		fleft.next = right;
+		right.next = temp;
+		fleft = temp;
+		}else if(floor == size/2) {
+			tail = right;
+			tail.next = null;
+		}
+		
+		
+	}
+	
+	Node fleft;
+	
+	public void fold() {
+		fleft = head;
+		foldHelper(head ,0);
+	}
 }

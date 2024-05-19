@@ -154,11 +154,21 @@ public class LLOperations {
 			ll.display();
 			
 			//reverse LL DATA recursively
-			System.out.println("everse data recursively");
+			System.out.println("reverse data recursively");
 			ll.display();
 			ll.reverseDLL();
 			ll.display();
+			
+			//is palindrome
+			
+			boolean palindrome = ll.isPalindrome();
+			System.out.println("Is palindrome : " + palindrome);
 	
+			ll.display();
+			System.out.println("Fold LL");
+			ll.fold();
+			ll.display();
+			
 	}
 
 	
